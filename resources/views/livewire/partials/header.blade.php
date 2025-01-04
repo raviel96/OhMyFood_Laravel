@@ -1,3 +1,5 @@
-<div>
-    <p>Header</p>
-</div>
+<header>
+    <div class="logo">
+        <img src={{asset('img/ohmyfood.png')}}></img>
+    </div>
+</header>
