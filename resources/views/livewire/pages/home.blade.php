@@ -8,7 +8,7 @@
         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
         <button>Explorer nos restaurants</button>
     </div>
-    <div>
+    <div class="home-links">
         <h2>Fonctionnement</h2>
         <div>
             <a href="#">
@@ -24,5 +24,10 @@
                 <p>Dégustez au restaurant</p>
             </a>
         </div>
+    </div>
+    <div class="home-content">
+        @foreach ($restaurants as $restaurant)
+            <img src="{{asset($restaurant->image)}}" alt="image" width="200" height="200">
+        @endforeach
     </div>
 </div>
