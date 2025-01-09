@@ -5,13 +5,19 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\StarterResource\Pages;
 use App\Filament\Resources\StarterResource\RelationManagers;
 use App\Models\Starter;
+use Faker\Provider\ar_EG\Text;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class StarterResource extends Resource
@@ -24,7 +30,22 @@ class StarterResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')
+                ->label('Name')
+                ->required(),
+                TextInput::make('description')
+                ->label('Description')
+                ->required(),
+                TextInput::make('price')
+                ->label('Price')
+                ->required(),
+                Select::make('restaurant_id')
+                ->multiple()
+                ->label('Restaurant')
+                ->required()
+                ->relationship('restaurant', 'name')
+                ->preload(),
+
             ]);
     }
 
@@ -56,7 +77,7 @@ class StarterResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            
         ];
     }
 

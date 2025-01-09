@@ -2,17 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\DessertResource\Pages;
-use App\Filament\Resources\DessertResource\RelationManagers;
-use App\Models\Dessert;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
+use App\Models\Dessert;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\DessertResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\DessertResource\RelationManagers;
 
 class DessertResource extends Resource
 {
@@ -24,7 +26,21 @@ class DessertResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')
+                ->label('Name')
+                ->required(),
+                TextInput::make('description')
+                ->label('Description')
+                ->required(),
+                TextInput::make('price')
+                ->label('Price')
+                ->required(),
+                Select::make('restaurant_id')
+                ->multiple()
+                ->label('Restaurant')
+                ->required()
+                ->relationship('restaurant', 'name')
+                ->preload(),
             ]);
     }
 

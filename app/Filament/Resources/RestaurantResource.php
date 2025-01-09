@@ -6,6 +6,7 @@ use App\Filament\Resources\RestaurantResource\Pages;
 use App\Filament\Resources\RestaurantResource\RelationManagers;
 use App\Models\Restaurant;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -24,7 +25,14 @@ class RestaurantResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')
+                ->label('Name')
+                ->required(),
+                TextInput::make('image')
+                ->label('Image'),
+                TextInput::make('location')
+                ->label('Location')
+                ->required(),
             ]);
     }
 
