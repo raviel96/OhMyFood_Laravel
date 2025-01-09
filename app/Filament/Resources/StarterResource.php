@@ -40,7 +40,6 @@ class StarterResource extends Resource
                 ->label('Price')
                 ->required(),
                 Select::make('restaurant_id')
-                ->multiple()
                 ->label('Restaurant')
                 ->required()
                 ->relationship('restaurant', 'name')
@@ -77,7 +76,6 @@ class StarterResource extends Resource
     public static function getRelations(): array
     {
         return [
-            
         ];
     }
 

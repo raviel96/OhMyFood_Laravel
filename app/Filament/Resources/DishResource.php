@@ -36,7 +36,6 @@ class DishResource extends Resource
                 ->label('Price')
                 ->required(),
                 Select::make('restaurant_id')
-                ->multiple()
                 ->label('Restaurant')
                 ->required()
                 ->relationship('restaurant', 'name')
