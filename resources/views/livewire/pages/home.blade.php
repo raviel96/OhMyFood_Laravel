@@ -27,7 +27,7 @@
     </div>
     <div class="home-content">
         @foreach ($restaurants as $restaurant)
-            <img src="{{asset($restaurant->image)}}" alt="image" width="200" height="200">
+            <livewire:components.restaurant-card :$restaurant :key="$restaurant->id">
         @endforeach
     </div>
 </div>
