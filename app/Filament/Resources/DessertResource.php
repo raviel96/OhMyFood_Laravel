@@ -40,6 +40,11 @@ class DessertResource extends Resource
                 ->required()
                 ->relationship('restaurant', 'name')
                 ->preload(),
+                Select::make('food_category_id')
+                ->label('Category')
+                ->required()
+                ->relationship('category', 'name')
+                ->preload(),
             ]);
     }
 
