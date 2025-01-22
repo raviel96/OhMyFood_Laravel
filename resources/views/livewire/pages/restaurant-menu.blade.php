@@ -1,19 +1,21 @@
 <div>
     <p>{{$restaurant->name}}</p>
-    @foreach (['starters', 'dishes', 'desserts'] as $food)
-        @foreach ($restaurant->$food as $item)
-            @switch($restaurant->$food->catehory)
-                @case("Plats")
+        @foreach ($foods as $key => $value)
+            @switch($key)
+                @case('starters')
                     <h2>Entrées</h2>
                     @break
-                @case("dishes")
+                @case('dishes')
                     <h2>Plats</h2>
                     @break
-                @case("desserts")
-                    <h2>Désserts</h2>
+                @case('desserts')
+                    <h2>Desserts</h2>
+                    @break
+                @default
                     @break
             @endswitch
-            {{-- <livewire:components.food-item :$item :key="$item->id"> --}}
+            @foreach ($value as $item)
+                <livewire:components.food-item :$item :key="$item->id">
+            @endforeach
         @endforeach
-    @endforeach
 </div>

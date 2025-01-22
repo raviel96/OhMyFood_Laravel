@@ -9,9 +9,19 @@ class RestaurantMenu extends Component
 {
 
     public $restaurant;   
+
+    public $foods = [];
+
     public function mount(Restaurant $restaurant)
     {
         $this->restaurant = $restaurant;
+
+        $this->foods = [
+            'starters' => $restaurant->starters,
+            'dishes' => $restaurant->dishes,
+            'desserts' => $restaurant->desserts
+        ];
+
     }
 
     public function render()

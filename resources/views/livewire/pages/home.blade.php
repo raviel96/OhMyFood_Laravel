@@ -11,6 +11,7 @@
     <div class="home-links">
         <h2>Fonctionnement</h2>
         <div>
+            {{-- Create a component for the links--}}
             <a href="#">
                 <i>Icon 1</i>
                 <p>Choisissez un restaurant</p>
