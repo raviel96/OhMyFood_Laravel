@@ -1,4 +1,4 @@
-<div>
+<div class="restaurant-menu">
     <p>{{$restaurant->name}}</p>
         @foreach ($foods as $key => $value)
             @switch($key)

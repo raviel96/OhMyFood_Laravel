@@ -1,8 +1,8 @@
-<a class="restaurant" href="{{route('restaurant', $restaurant)}}" wire:navigate="restaurant">
-    <img class="restaurant-image" src="{{asset($restaurant->image)}}" alt="Restaurant image">
-    <div class="restaurant-description">
+<a class="restaurant-card" href="{{route('restaurant', $restaurant)}}" wire:navigate="restaurant">
+    <img class="restaurant-card-image" src="{{asset($restaurant->image)}}" alt="Restaurant image">
+    <div class="restaurant-card-description">
         <h3>{{$restaurant->name}}</h3>
         <p>{{$restaurant->description}}</p>
-        <button>Heart icon</button>
+        <button><i class="fa-regular fa-heart"></i></button>
     </div>
 </a>
