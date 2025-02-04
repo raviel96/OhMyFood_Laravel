@@ -10,16 +10,18 @@
     </div>
     <div class="home-links">
         <h2>Fonctionnement</h2>
-        <div>
+        <div class="home-links-container">
             @foreach ($homeLinks as $value)
                 <livewire:components.home-links icon="{{$value['icon']}}" text="{{$value['text']}}" :key/>
             @endforeach
         </div>
     </div>
-    <section class="home-content">
+    <section class="home-restaurant">
         <h2>Restaurants</h2>
-        @foreach ($restaurants as $restaurant)
-            <livewire:components.restaurant-card :$restaurant :key="$restaurant->id">
-        @endforeach
+        <div class="home-restaurant-container">
+            @foreach ($restaurants as $restaurant)
+                <livewire:components.restaurant-card :$restaurant :key="$restaurant->id">
+             @endforeach
+        </div>
     </div>
 </div>
