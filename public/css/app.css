@@ -9,7 +9,7 @@
     --box-shadow-color: #bfbfbf;
 
     --font-family :  'Roboto', sans-serif;
-    --logo-font: "Shrikhand", sans-serif;
+    --logo-font: 'Shrikhand', sans-serif;
     --h1-size-s: 1.4rem;
     --h1-size-l: 2rem;
     --h2-size-s: 1.12rem;
@@ -28,6 +28,7 @@
     --button-color: linear-gradient(to top, #9356dc, #ff79da);
 }
 
+/* Global */
 body {
     font-family: var(--font-family);
     background-color: var(--primary-color);
@@ -49,7 +50,9 @@ h1,h2,h3 {
 button {
     background: var(--button-color);
 }
+/* Global */
 
+/* Header */
 .header {
     text-align: center;
     padding: var(--spacing-one) 0;
@@ -61,7 +64,9 @@ button {
     max-width: var(--logo-width);
     min-height: var(--logo-height);
 }
+/* Header */
 
+/* Main content */
 .home {
 
     .home-location {
@@ -245,3 +250,30 @@ button {
     }
     
 }
+/* Main content */
+.footer {
+    background-color: var(--secondary-color);
+    padding: var(--spacing-two);
+
+    h3 {
+        font-family: var(--logo-font);
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-two);
+    }
+
+    .footer-link-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-one);
+        color: var(--primary-color);
+        
+        a {
+            color: inherit;
+
+            i {
+                margin-right: calc(var(--spacing-one) / 2);
+            }
+        }
+    }
+}
+
