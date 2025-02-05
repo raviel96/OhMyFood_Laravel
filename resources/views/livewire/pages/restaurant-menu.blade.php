@@ -1,4 +1,7 @@
 <div class="restaurant-menu">
+    <div class="hero-image">
+        <img src="{{asset($restaurant->image)}}" alt="hero-image">
+    </div>
     <p>{{$restaurant->name}}</p>
         @foreach ($foods as $key => $value)
             @switch($key)
