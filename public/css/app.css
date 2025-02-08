@@ -1,4 +1,5 @@
 @import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 :root {
     --primary-color: #f4f3f2;
@@ -251,6 +252,8 @@ button {
     
 }
 /* Main content */
+
+/* Footer */
 .footer {
     background-color: var(--secondary-color);
     padding: var(--spacing-two);
@@ -270,10 +273,103 @@ button {
         a {
             color: inherit;
 
+            &:hover {
+                color : var(--accent-color-two);
+            }
+
             i {
                 margin-right: calc(var(--spacing-one) / 2);
             }
         }
     }
 }
+/* Footer */
+
+/* Restaurant menu */
+.restaurant-menu {
+    .hero-image {
+        
+        img {
+            height: var(--image-height);   
+        }
+    }
+
+    .restaurant-menu-content {
+        
+        padding: var(--spacing-two);
+
+        h2 {
+            font-weight: lighter;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 3px;
+                background-color: var(--accent-color-two);
+                margin-top: 1px;
+            }
+        }
+    
+        .restaurant-menu-content-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-one);
+            
+            h1 {
+                font-family: "Shrikhand", serif;
+            }
+
+            button {
+                background: none;
+                border:none;
+
+                height: 50px;
+
+                i {
+                    font-size: 1.2rem;
+                }
+            }
+
+           
+            
+        }
+
+        .food-item-container {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(250px, 1fr));
+            gap: var(--spacing-two);
+            margin: var(--spacing-two) 0;
+
+            .food-item {
+                display: flex;
+                justify-content: space-between;
+                color: #000;
+                border-radius: var(--border-radius);
+                padding: var(--spacing-one);
+                box-shadow: 0 3px 5px var(--box-shadow-color);
+
+                &:hover {
+                    transform: scale(1.02);
+                    transition: transform 0.3s;
+                }
+
+                .food-item-content {
+                    p {
+                        font-weight: lighter;
+                        margin-top: calc(var(--spacing-one) / 2);
+                    }
+                }
+
+                .food-item-price  {
+                    align-self: end;
+                }
+            }
+        }
+    }
+
+}
+
+/* Restaurant menu */
 
