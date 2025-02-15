@@ -27,6 +27,6 @@
                 @endforeach
             </div>
         @endforeach
-        <button>Commander</button>
+        <button class="order-button">Commander</button>
     </div>
 </div>
