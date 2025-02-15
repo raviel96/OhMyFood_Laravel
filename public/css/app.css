@@ -447,6 +447,17 @@ button {
         .restaurant-menu-content {
             .food-item-container {
                 grid-template-columns: repeat(2, minmax(250px, 1fr));   
+
+                .food-item {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .food-item-price  {
+                        align-self: auto;
+                        margin-top: var(--spacing-two);
+                    }
+                }
             }
         }
     }
